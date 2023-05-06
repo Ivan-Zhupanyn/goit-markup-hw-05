@@ -7,10 +7,11 @@ body {
 :root {
   --main-text-color: #434455;
   --heading-text-color: #2e2f42;
-  --filter-btn-text-color: #4d5ae5;
   --icons-basic-color: #8e8f99;
   --white-color: #ffffff;
   --icons-social-color: #f4f4fd;
+  --link-standart-color: #4d5ae5;
+  --link-focus-color: #404bbf;
 }
 h1,
 h2,
@@ -27,6 +28,19 @@ ol {
 img {
   display: block;
 }
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
 .container {
   width: 1158px;
   margin: 0 auto;
@@ -40,6 +54,9 @@ img {
 }
 .list {
   list-style: none;
+}
+/* Modal windov */
+.overlay {
 }
 /* Header */
 .header {
@@ -69,10 +86,24 @@ img {
   line-height: 1.5em;
   letter-spacing: 0.02em;
   color: var(--heading-text-color);
+  display: block;
+  align-items: center;
+  position: relative;
 }
 .header-nav:focus,
 .header-nav:hover {
-  color: #404bbf;
+  color: var(--link-focus-color);
+}
+.header-nav::after {
+  display: block;
+  position: absolute;
+  bottom: 10px;
+  left: 0;
+  content: '';
+  width: auto;
+  height: 4px;
+  background-color: var(--link-focus-color);
+  border-radius: 2px;
 }
 .logo-web {
   margin-right: 76px;
@@ -84,7 +115,7 @@ img {
   align-items: center;
   letter-spacing: 0.03em;
   text-transform: uppercase;
-  color: #4d5ae5;
+  color: var(--link-standart-color);
 }
 .logo-studio {
   color: var(--heading-text-color);
@@ -110,7 +141,7 @@ img {
 }
 .address-link:hover,
 .address-link:focus {
-  color: #404bbf;
+  color: var(--link-focus-color);
 }
 /* Hero section 1*/
 .hero {
@@ -148,7 +179,7 @@ img {
   min-width: 169px;
   height: 56px;
   font-family: inherit;
-  background-color: var(--filter-btn-text-color);
+  background-color: var(--link-standart-color);
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
   border-radius: 4px;
   border: none;
@@ -161,7 +192,7 @@ img {
 }
 .hero-btn:hover,
 .hero-btn:focus {
-  background: #404bbf;
+  background: var(--link-focus-color);
 }
 /* Our advantages section 2*/
 .advantages-section {
@@ -281,12 +312,12 @@ img {
   display: flex;
   justify-content: center;
   align-items: center;
-  background: #4d5ae5;
+  background: var(--link-standart-color);
   border-radius: 50%;
 }
 .socials-link:hover,
 .socials-link:focus {
-  background: #404bbf;
+  background: var(--link-focus-color);
 }
 .socials-icon {
   fill: var(--icons-social-color);
@@ -325,8 +356,8 @@ img {
 }
 .customers-link:hover,
 .customers-link:focus {
-  border: 1px solid #404bbf;
-  color: #404bbf;
+  border: 1px solid var(--link-focus-color);
+  color: var(--link-focus-color);
   border-radius: 4px;
 }
 .customers-icon {
@@ -359,7 +390,7 @@ img {
   align-items: center;
   letter-spacing: 0.03em;
   text-transform: uppercase;
-  color: #4d5ae5;
+  color: var(--link-standart-color);
   margin-bottom: 16px;
 }
 .footer-logo-studio {
@@ -411,7 +442,7 @@ img {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: var(--filter-btn-text-color);
+  background-color: var(--link-standart-color);
 }
 .social-footer-link:hover,
 .social-footer-link:focus {
@@ -448,12 +479,12 @@ img {
   align-items: center;
   text-align: center;
   letter-spacing: 0.04em;
-  color: var(--filter-btn-text-color);
+  color: var(--link-standart-color);
   cursor: pointer;
 }
 .filter-btn:hover,
 .filter-btn:focus {
-  background: #404bbf;
+  background: var(--link-focus-color);
   box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 2px 1px rgba(0, 0, 0, 0.08),
     0px 2px 2px rgba(0, 0, 0, 0.12);
   color: #ffffff;
