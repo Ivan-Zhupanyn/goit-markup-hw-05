@@ -111,6 +111,9 @@ img {
   display: block;
   align-items: center;
   position: relative;
+  transition-property: color;
+  transition-duration: var(--animation-time);
+  transition-timing-function: var(--animation-timing-function);
 }
 .header-nav-active::after {
   display: block;
